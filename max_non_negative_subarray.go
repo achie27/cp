@@ -16,7 +16,7 @@ func min(x, y int) int {
  * 
  * @Output Integer array.
  */
-func maxset(A []int )  ([]int) {
+ func maxset(A []int )  ([]int) {
     
     arr_len := len(A)
     max_begin, max_end := -1, -1
@@ -47,10 +47,13 @@ func maxset(A []int )  ([]int) {
         }
         end+=1;
     }
-    
+
+    if max_begin == -1 && max_end == -1 {
+        return []int{}
+    }
     return A[max_begin : min(max_end + 1, arr_len)];
 }
 
 func main() {
-	fmt.Println(maxset([]int{3, 3, -1, 434343}))
+	fmt.Println(maxset([]int{ -1, -1, -1, -1, -1 }))
 }
