@@ -1,3 +1,9 @@
+package main
+
+import ( 
+	"fmt" 
+)
+
 func min(x, y int) int {
     if (x < y) {
         return x;
@@ -43,4 +49,8 @@ func maxset(A []int )  ([]int) {
     }
     
     return A[max_begin : min(max_end + 1, arr_len)];
+}
+
+func main() {
+	fmt.Println(maxset([]int{3, 3, -1, 434343}))
 }
