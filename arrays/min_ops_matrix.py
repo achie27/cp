@@ -3,18 +3,12 @@ class Solution:
     # @param B : integer
     # @return an integer
     def solve(self, A, B):
-        flattened_a, mod, res = [], A[0][0]%B, 0
+        flattened_a, mod = [], A[0][0]%B
         for e in A:
             for f in e:
                 if mod != f%B:
-                    res = -1
-                    break
+                    return -1
                 flattened_a.append(f)
-            if res == -1:
-                break
-        
-        if res == -1:
-            return -1
         
         flattened_a.sort()
         
